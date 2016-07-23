@@ -60,7 +60,7 @@ func main() {
 		log.Fatalf("error fetching token: %s", err)
 	}
 
-	link, err := getImpersionationLink(*account, userID, *impersonatorID, *appClientID, token, *scope)
+	link, err := getImpersonationLink(*account, userID, *impersonatorID, *appClientID, token, *scope)
 	if err != nil {
 		log.Fatalf("error fetching link: %s", err)
 	}
@@ -96,8 +96,8 @@ func getToken(account, clientID, clientSecret string) (string, error) {
 	return v.AccessToken, nil
 }
 
-// getImpersionationLink returns a link which can be used to authenticate as the user.
-func getImpersionationLink(account, userID, impersonatorID, clientID, token, scope string) (string, error) {
+// getImpersonationLink returns a link which can be used to authenticate as the user.
+func getImpersonationLink(account, userID, impersonatorID, clientID, token, scope string) (string, error) {
 	url := fmt.Sprintf("https://%s.auth0.com/users/%s/impersonate", account, userID)
 
 	body := &impersonationInput{
