@@ -28,6 +28,12 @@ the "impersonator" user ID (you), and the ID of the user.
 $ impersonate --account apex-inc --client-id xxxxx --impersonator-id 'github|yyy' 'github|zzz'
 ```
 
+If you have multiple callback URLs and want a specific redirect URI:
+
+```sh
+$ impersonate --account apex-inc --client-id xxxxx --redirect-uri 'https://foo.bar' --impersonator-id 'github|yyy' 'github|zzz'
+```
+
 If this gets annoying or you have multiple applications, you may want to alias in your profile:
 
 ```sh
